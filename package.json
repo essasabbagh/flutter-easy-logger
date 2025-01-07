@@ -1,0 +1,131 @@
+{
+  "name": "flutter-applog",
+  "displayName": "Flutter Easy Logger",
+  "description": "Add Logger easly to your application",
+  "version": "0.0.5",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.addSuccessLog",
+        "title": "Add Success Log"
+      },
+      {
+        "command": "extension.addInfoLog",
+        "title": "Add Info Log"
+      },
+      {
+        "command": "extension.addWarningLog",
+        "title": "Add Warning Log"
+      },
+      {
+        "command": "extension.addErrorLog",
+        "title": "Add Error Log"
+      },
+      {
+        "command": "extension.addDebugLog",
+        "title": "Add Debug Log"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.addSuccessLog",
+        "key": "ctrl+alt+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.addInfoLog",
+        "key": "ctrl+alt+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.addWarningLog",
+        "key": "ctrl+alt+w",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.addErrorLog",
+        "key": "ctrl+alt+e",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.addDebugLog",
+        "key": "ctrl+alt+d",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Custom Logging",
+      "properties": {
+        "customLogging.loggerClass": {
+          "type": "string",
+          "default": "AppLogs",
+          "description": "The class name to use for logging"
+        },
+        "customLogging.methodNames": {
+          "type": "object",
+          "default": {
+            "debug": "debug",
+            "success": "success",
+            "info": "info",
+            "error": "error",
+            "warning": "warning"
+          },
+          "description": "Custom method names for different log types",
+          "properties": {
+            "debug": {
+              "type": "string",
+              "description": "Method name for debug logs"
+            },
+            "success": {
+              "type": "string",
+              "description": "Method name for success logs"
+            },
+            "info": {
+              "type": "string",
+              "description": "Method name for info logs"
+            },
+            "error": {
+              "type": "string",
+              "description": "Method name for error logs"
+            },
+            "warning": {
+              "type": "string",
+              "description": "Method name for warning logs"
+            }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
