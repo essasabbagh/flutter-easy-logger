@@ -1,14 +1,16 @@
 {
   "name": "flutter-applog",
+  "publisher": "essasabbagh",
   "displayName": "Flutter Easy Logger",
   "description": "Add Logger easly to your application",
-  "version": "0.0.5",
+  "icon": "images/icon.png",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.96.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/username/repository.git"
+    "url": "git://github.com/essasabbagh/flutter-easy-logger.git"
   },
   "categories": [
     "Other"
@@ -70,7 +72,7 @@
       "properties": {
         "customLogging.loggerClass": {
           "type": "string",
-          "default": "AppLogs",
+          "default": "AppLog",
           "description": "The class name to use for logging"
         },
         "customLogging.methodNames": {

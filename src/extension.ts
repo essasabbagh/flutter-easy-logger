@@ -13,7 +13,7 @@ interface LogMethodNames {
 function getConfig() {
     const config = vscode.workspace.getConfiguration('customLogging');
     return {
-        loggerClass: config.get<string>('loggerClass') || 'AppLogs',
+        loggerClass: config.get<string>('loggerClass') || 'AppLog',
         methodNames: config.get<LogMethodNames>('methodNames') || {
             debug: 'debug',
             success: 'success',
